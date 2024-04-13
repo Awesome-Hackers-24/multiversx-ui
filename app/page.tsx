@@ -4,13 +4,16 @@ import { GetUserDataDemo } from '@/components/demo/get-user-data-demo';
 import { GetLoggingInStateDemo } from '@/components/demo/get-logging-in-state-demo';
 import { GetLoginInfoDemo } from '@/components/demo/get-login-info-demo';
 import { CardContent, Card } from '@/components/ui/card';
+import NFTCard from '@/components/new/NFTs/NFTCard';
+import NFTGallery from '@/components/new/NFTs/NFTGallery';
+import { Button } from '@/components/ui/button';
 
 const Home: NextPage = () => {
   return (
     <>
       <Card className="mb-4">
-        <CardContent className="mt-6">
-          <div className="mb-4">
+        {/* <CardContent className="mt-6"> */}
+          {/* <div className="mb-4">
             Here is the demo of an MultiversX dapp for interactions with the
             blockchain and smart contracts. It provides four different ways of
             authentication and also a couple of React-based helpers/hooks. It is
@@ -53,10 +56,18 @@ const Home: NextPage = () => {
             </a>{' '}
             app.
           </div>
-        </CardContent>
+        </CardContent> */}
       </Card>
+      <NFTGallery />
+
+      <div>
+          <p>Unlock the power of your brain data.</p>
+        <Button asChild variant="outline">
+          <a href="/nft">Get Started</a>
+        </Button>
+      </div>
       <SimpleDemo />
-      <Card className="mb-4">
+      {/* <Card className="mb-4">
         <CardContent className="mt-6">
           <div className="mb-4">
             Now let us see what other valuable tools are included.
@@ -73,7 +84,7 @@ const Home: NextPage = () => {
             </li>
           </ul>
         </CardContent>
-      </Card>
+      </Card> */}
       <div className="flex mb-4 gap-4 flex-wrap justify-center flex-col lg:flex-row">
         <GetUserDataDemo />
         <GetLoginInfoDemo />

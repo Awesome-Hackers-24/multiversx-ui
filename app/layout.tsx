@@ -49,22 +49,33 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="container mx-auto">
             <div className="w-full flex items-center justify-between flex-wrap gap-2 py-9 flex-col lg:flex-row">
+            <div className='flex items-center gap-12'>
+
               <Link href="/">
                 <div className="flex items-center gap-2 relative select-none">
                   <span className="cursor-pointer mb-0 text-4xl font-black text-center">
-                    MultiversX Dapp Template
+                    Cognify
                   </span>
                 </div>
               </Link>
+              <nav>
+            <ul className="flex gap-6">
+              <li><Link href="/"><div className="text-lg text-gray-200 hover:text-gray-300">Dashboard</div></Link></li>
+              <li><Link href="/challenges"><div className="text-lg text-gray-200 hover:text-gray-300">Challenges</div></Link></li>
+              <li><Link href="/leaderboard"><div className="text-lg text-gray-200 hover:text-gray-300">Leaderboard</div></Link></li>
+            </ul>
+          </nav>
+            </div>
+             
               <div className="flex items-center gap-5">
-                <div className="flex items-center gap-3">
+                {/* <div className="flex items-center gap-3">
                   <a
                     href="https://github.com/xdevguild/nextjs-dapp-template"
                     target="_blank"
                   >
                     <Github size={30} />
                   </a>
-                </div>
+                </div> */}
                 {/* TODO: implement docs page */}
                 {/* <Button asChild variant="outline">
                   <Link href="/docs">Docs</Link>
