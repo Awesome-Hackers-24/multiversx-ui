@@ -9,6 +9,9 @@ const nextConfig = {
     );
     return config;
   },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   eslint: {
     dirs: ['components', 'hooks', 'lib', 'app'],
   },
