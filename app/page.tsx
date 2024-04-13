@@ -7,56 +7,13 @@ import { CardContent, Card } from '@/components/ui/card';
 import NFTCard from '@/components/new/NFTs/NFTCard';
 import NFTGallery from '@/components/new/NFTs/NFTGallery';
 import { Button } from '@/components/ui/button';
+import LandingPage from '@/components/new/Landing';
 
 const Home: NextPage = () => {
   return (
     <>
       <Card className="mb-4">
-        {/* <CardContent className="mt-6"> */}
-          {/* <div className="mb-4">
-            Here is the demo of an MultiversX dapp for interactions with the
-            blockchain and smart contracts. It provides four different ways of
-            authentication and also a couple of React-based helpers/hooks. It is
-            based on NextJS and uses JS SDK (sdk-core). It also uses Shadcn UI
-            and Tailwind CSS.
-          </div>
-          <div className="mb-4">
-            We have hardcoded a setup for five different operations to simplify
-            things. These are:
-          </div>
-          <ul className="mb-4">
-            <li>- Simple EGLD transfer to hardcoded address.</li>
-            <li>
-              - Simple Mint operation on{' '}
-              <a href="https://www.elven.tools" target="_blank">
-                Elven Tools
-              </a>{' '}
-              demo minter smart contract.
-            </li>
-            <li>
-              - Random query operation on the Elven Tools demo minter smart
-              contract.
-            </li>
-            <li>- Simple smart contract deployment</li>
-            <li>- Signing a mesage</li>
-          </ul>
-          <span>
-            It is to demonstrate how such things can be achieved without much
-            development. Maybe later, we will come up with a much better demo
-            dapp.
-          </span>
-          <div className="mt-3">
-            For more examples please check the{' '}
-            <a
-              href="https://www.buildo.dev"
-              className="underline font-bold"
-              target="_blank"
-            >
-              Buildo.dev
-            </a>{' '}
-            app.
-          </div>
-        </CardContent> */}
+        {/* <LandingPage /> */}
       </Card>
       <NFTGallery />
 
