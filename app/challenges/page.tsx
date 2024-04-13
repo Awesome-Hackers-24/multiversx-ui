@@ -7,10 +7,10 @@ import { ChallengeModal } from '@/components/new/Modals/ChallengeModal'; // Make
 const ChallengesPage = () => {
   // List of challenges
   const challenges = [
-    { name: 'Focus', description: 'Improve your concentration.', link: '/focus' },
-    { name: 'Relax', description: 'Reduce stress and relax your mind.', link: '/relax' },
-    { name: 'Brainstorm', description: 'Unlock creativity and problem-solving.', link: '/brainstorm' },
-    { name: 'Extreme Focus', description: 'Maximize your focus under extreme conditions.', link: '/extreme-focus' }
+    { name: 'Focus', description: 'Improve your concentration.', link: '/' },
+    { name: 'Relax', description: 'Reduce stress and relax your mind.', link: '/' },
+    { name: 'Brainstorm', description: 'Unlock creativity and problem-solving.', link: '/' },
+    { name: 'Extreme Focus', description: 'Maximize your focus under extreme conditions.', link: '/-focus' }
   ];
 
   // State to handle which challenge is currently active
