@@ -8,6 +8,7 @@ import { ModeToggle } from '@/components/mode-toggle';
 import { ElvenInit } from '@/components/elven-ui/elven-init';
 import { LoginModalButton } from '@/components/elven-ui/login-modal-button';
 import Link from 'next/link';
+import BgShapes from '@/components/new/Background/Shapes';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -47,6 +48,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ElvenInit />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+         <BgShapes />
           <div className="container mx-auto">
             <div className="w-full flex items-center justify-between flex-wrap gap-2 py-9 flex-col lg:flex-row">
             <div className='flex items-center gap-12'>
@@ -91,13 +93,12 @@ export default function RootLayout({
           <div className="flex h-[120px] items-center">
             <div className="flex flex-col items-center justify-center container mx-auto text-center text-sm">
               <div className="font-bold">
-                MultiversX NextJS Dapp Template (v{`${packageJson.version}`})
+                Cognify 1.0 
               </div>
-              <div className="text-xs font-light">
-                Support Our Project: While attribution isn&apos;t mandatory, we
-                deeply appreciate any form of recognition.
+              <div className="text-xs text-center font-light mt-2">
+             Built with {"<3"} at Bucharest Hackathon.
               </div>
-              <div className="flex flex-row content-center text-xs font-bold mt-4">
+              {/* <div className="flex flex-row content-center text-xs font-bold mt-4">
                 <a href="https://github.com/xdevguild" target="_blank">
                   {'xDevGuild'}
                 </a>
@@ -113,7 +114,7 @@ export default function RootLayout({
                 <a href="https://www.julian.io" target="_blank">
                   {'julian.io'}
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
         </ThemeProvider>

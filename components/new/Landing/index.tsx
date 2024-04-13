@@ -1,46 +1,41 @@
-import React from 'react';
-import Link from 'next/link';
-
-const LandingPage = () => {
-  return (
-    <div className="flex flex-col">
-      {/* Hero Section */}
-      <div className="bg-blue-500 text-white text-center p-12">
-        <h1 className="text-4xl font-bold mb-4">Enhance Your Brain's Potential</h1>
-        <p className="text-xl mb-6">Unlock productivity and creativity with guided brain state modulation.</p>
-        <Link href="/signup">
-          <div className="bg-white text-blue-500 py-2 px-6 rounded-lg font-semibold hover:bg-gray-100 transition-colors">Get Started</div>
-        </Link>
-      </div>
-
-      {/* Info Section 1 */}
-      <div className="flex flex-col items-center text-center p-12">
-        <h2 className="text-3xl font-bold mb-4">Why Choose Neurafy?</h2>
-        <p className="text-lg mb-6">Our cutting-edge EEG technology helps you enter targeted brain states on demand.</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl">
-          <div className="p-4 shadow-lg rounded-lg">
-            <h3 className="text-2xl font-semibold mb-2">Focus</h3>
-            <p>Enhance your ability to concentrate for longer periods.</p>
+interface PageHeaderProps {
+    className?: string;
+    children: React.ReactNode;
+    title: string;
+    description?: string;
+  }
+  
+  export default function PageHeader({
+    className,
+    children,
+    title,
+    description,
+  }: PageHeaderProps) {
+    return (
+      <div className={`max-w-3xl mx-auto ${className || ""}`}>
+        <div className="text-center">
+          <div className="relative flex items-center justify-center gap-4 mb-5 before:h-px before:w-24 before:border-b before:[border-image:linear-gradient(to_left,theme(colors.indigo.300),transparent)1] dark:before:[border-image:linear-gradient(to_left,theme(colors.indigo.300/.16),transparent)1] before:shadow-sm before:shadow-white/20 dark:before:shadow-none after:h-px after:w-24 after:border-b after:[border-image:linear-gradient(to_right,theme(colors.indigo.300),transparent)1] dark:after:[border-image:linear-gradient(to_right,theme(colors.indigo.300/.16),transparent)1] after:shadow-sm after:shadow-white/20 dark:after:shadow-none">
+            <div className="relative text-sm font-medium text-gray-700 bg-white dark:bg-gray-700 inline-flex rounded-lg whitespace-nowrap px-3 py-[3px] tracking-normal before:absolute before:inset-0 before:rounded-lg before:[background-image:linear-gradient(120deg,transparent_0%,theme(colors.indigo.400/.12)_33%,theme(colors.pink.400/.12)_66%,theme(colors.amber.200/.12)_100%)] dark:before:[background-image:linear-gradient(120deg,theme(colors.indigo.400/.16),theme(colors.indigo.600/.16)_50%,transparent_100%)] shadow">
+              {/* Border with dots in corners */}
+              <div
+                className="absolute -inset-1.5 bg-indigo-500/15 dark:bg-gray-800/65 rounded-sm -z-10 before:absolute before:inset-y-0 before:left-0 before:w-[7px] before:bg-[length:7px_7px] before:[background-position:top_center,bottom_center] before:bg-no-repeat before:[background-image:radial-gradient(circle_at_center,theme(colors.indigo.500/.56)_0.5px,transparent_0.5px),radial-gradient(circle_at_center,theme(colors.indigo.500/.56)_0.5px,transparent_0.5px)] dark:before:[background-image:radial-gradient(circle_at_center,theme(colors.gray.600/.56)_0.5px,transparent_0.5px),radial-gradient(circle_at_center,theme(colors.gray.600/.56)_0.5px,transparent_0.5px)] after:absolute after:inset-y-0 after:right-0 after:w-[7px] after:bg-[length:7px_7px] after:[background-position:top_center,bottom_center] after:bg-no-repeat after:[background-image:radial-gradient(circle_at_center,theme(colors.indigo.500/.56)_0.5px,transparent_0.5px),radial-gradient(circle_at_center,theme(colors.indigo.500/.56)_0.5px,transparent_0.5px)] dark:after:[background-image:radial-gradient(circle_at_center,theme(colors.gray.600/.56)_0.5px,transparent_0.5px),radial-gradient(circle_at_center,theme(colors.gray.600/.56)_0.5px,transparent_0.5px)]"
+                aria-hidden="true"
+              />
+              <span className="relative text-gray-800 dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-b dark:from-indigo-500 dark:to-indigo-50">
+                {children}
+              </span>
+            </div>
           </div>
-          <div className="p-4 shadow-lg rounded-lg">
-            <h3 className="text-2xl font-semibold mb-2">Relax</h3>
-            <p>Wind down after a long day with relaxation techniques that work.</p>
+          <div>
+            <h1 className="font-inter-tight text-5xl md:text-6xl font-bold text-gray-800 dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-b dark:from-indigo-200 dark:to-gray-200 pb-4">
+              {title}
+            </h1>
+            <p className="text-lg text-gray-700 dark:text-gray-400">
+              {description}
+            </p>
           </div>
         </div>
       </div>
-
-      {/* Info Section 2 */}
-      <div className="bg-gray-100 p-12">
-        <div className="flex flex-col items-center text-center">
-          <h2 className="text-3xl font-bold mb-4">Join Our Community</h2>
-          <p className="text-lg mb-6">Connect with others on the same journey and share your experiences.</p>
-          <Link href="/community">
-            <div> className="bg-blue-500 text-white py-2 px-6 rounded-lg font-semibold hover:bg-blue-600 transition-colors">Learn More</div>
-          </Link>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default LandingPage;
+    );
+  }
+  

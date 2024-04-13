@@ -8,12 +8,22 @@ import NFTCard from '@/components/new/NFTs/NFTCard';
 import NFTGallery from '@/components/new/NFTs/NFTGallery';
 import { Button } from '@/components/ui/button';
 import LandingPage from '@/components/new/Landing';
+import PageHeader from '@/components/new/Landing';
+import CTA from '@/components/new/Landing/CTA';
 
 const Home: NextPage = () => {
   return (
     <>
       <Card className="mb-4">
-        {/* <LandingPage /> */}
+        <div className="px-4 sm:px- py-20 items-center flex flex-col">
+        <PageHeader  
+          description='Unlock productivity and creativity with guided brain state modulation.'
+          title="Your brain, to the power of X."
+          >
+          Now in BETA
+        </PageHeader>
+        <CTA  />
+        </div>
       </Card>
       <NFTGallery />
 

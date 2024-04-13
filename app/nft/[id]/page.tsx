@@ -3,6 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 
 // Dummy data - replace with actual data fetching logic
 const nftData = {
@@ -19,7 +20,7 @@ const NFTDetailPage = () => {
   // const { id } = router.query; // Fetch the ID from the URL
   return (
     <div className="container mx-auto px-4 py-12">
-      <Card className="max-w-4xl mx-auto">
+      <Card className="max-w-4xl mx-auto space-y-6">
         <CardHeader>
           <div className="w-full h-80 relative">
             <Image src={nftData.imageUrl} alt={nftData.name} layout="fill" objectFit="cover" />
@@ -31,15 +32,32 @@ const NFTDetailPage = () => {
           <div className="text-sm text-gray-500 my-4">
             Earned on {nftData.earnedDate}
           </div>
+          <div className="text-sm text-gray-700 my-2">
+            <strong>Blockchain ID:</strong> BRAIN-j3f3kl-01
+          </div>
         </CardContent>
-        <CardFooter>
-          <a href={nftData.rawDataUrl} download className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        <CardFooter className="flex gap-3 items-center">
+          <Button href={nftData.rawDataUrl} variant='outline' download className=" hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
             Download Raw Data
-          </a>
+          </Button>
+          <Button href="https://explorer.multiversx.com" target="_blank" rel="noopener noreferrer" className='py-2 px-4 rounded'>
+            See on Blockchain
+          </Button>
         </CardFooter>
+      </Card>
+      <Card className="max-w-4xl mx-auto mt-8">
+        <CardContent>
+          <div className="text-lg font-semibold">
+            Owned by
+          </div>
+          <div className="text-sm text-gray-500">
+            Address: 0x123...abc
+          </div>
+        </CardContent>
       </Card>
     </div>
   );
+  
 };
 
 export default NFTDetailPage;

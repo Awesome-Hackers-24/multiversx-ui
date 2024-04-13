@@ -24,6 +24,20 @@ const nftItems = [
     description: 'Deep oceanic scenes portrayed in dark, moody blues.',
     earnedDate: '2023-06-20',
   },
+  {
+    id: 'nft-001',
+    name: 'Ethereal Moonlight',
+    imageUrl: '/path/to/nft-image1.jpg',
+    description: 'A unique digital artwork capturing the serene beauty of moonlight.',
+    earnedDate: '2023-04-12',
+  },
+  {
+    id: 'nft-001',
+    name: 'Ethereal Moonlight',
+    imageUrl: '/path/to/nft-image1.jpg',
+    description: 'A unique digital artwork capturing the serene beauty of moonlight.',
+    earnedDate: '2023-04-12',
+  },
   // Add more NFTs as needed
 ];
 
