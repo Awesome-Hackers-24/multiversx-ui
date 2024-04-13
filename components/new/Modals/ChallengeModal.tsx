@@ -57,13 +57,15 @@ export const ChallengeModal: FC<ChallengeModalProps> = ({
         </DialogHeader>
         <div className="grid gap-4 overflow-y-auto max-h-[calc(100vh-160px)] px-6 pb-12 pt-6">
           <p className="text-center">
-            {challengeComplete ? "You have completed the challenge. Proceed to claim your NFT." : `Challenge started. Proceed to the newly opened tab to continue with '${challenge.name}'.`}
+            {challengeComplete ? `You have completed the ${challenge.name} challenge. Proceed to claim your brain data NFT.` : `Challenge started. Proceed to the newly opened tab to continue with '${challenge.name}'.`}
           </p>
-          {challengeComplete && (
-            <Button variant="solid" onClick={handleClaimNFT}>
+          {challengeComplete ? (
+            <Button variant="outline" onClick={handleClaimNFT} className='mt-5'>
               Claim NFT
             </Button>
-          )}
+          ) : <Button onClick={() => handleCompleteChallenge() } > 
+              End Challenge
+            </Button>}
         </div>
       </DialogContent>
     </Dialog>

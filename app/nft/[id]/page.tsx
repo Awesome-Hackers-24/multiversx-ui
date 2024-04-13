@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 // Dummy data - replace with actual data fetching logic
 const nftData = {
   id: 'nft-001',
-  name: 'Ethereal Moonlight',
+  name: 'Relaxed Week',
   imageUrl: '/path/to/nft-image.jpg',
   description: 'A unique digital artwork capturing the serene beauty of moonlight.',
   earnedDate: '2023-04-12',
@@ -33,11 +33,11 @@ const NFTDetailPage = () => {
             Earned on {nftData.earnedDate}
           </div>
           <div className="text-sm text-gray-700 my-2">
-            <strong>Blockchain ID:</strong> BRAIN-j3f3kl-01
+             BRAIN-j3f3kl-01
           </div>
         </CardContent>
         <CardFooter className="flex gap-3 items-center">
-          <Button href={nftData.rawDataUrl} variant='outline' download className=" hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          <Button href={nftData.rawDataUrl} variant='outline' download className="hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
             Download Raw Data
           </Button>
           <Button href="https://explorer.multiversx.com" target="_blank" rel="noopener noreferrer" className='py-2 px-4 rounded'>
@@ -46,12 +46,15 @@ const NFTDetailPage = () => {
         </CardFooter>
       </Card>
       <Card className="max-w-4xl mx-auto mt-8">
-        <CardContent>
-          <div className="text-lg font-semibold">
+        <CardContent className="cursor-pointer p-5" onClick={() => window.open(`https://explorer.multiversx.com/address/0x123...abc`, '_blank')}>
+          <div className="text-lg font-semibold mb-2">
             Owned by
           </div>
-          <div className="text-sm text-gray-500">
-            Address: 0x123...abc
+          <div className="text-md text-gray-500">
+            Address: <a className="t" onClick={(e) => {
+              e.stopPropagation();  // Prevents the CardContent onClick from firing when clicking the link
+              window.open(`https://explorer.multiversx.com/address/erd1v7dxzrmwlhg6etxautdnm6lm4tkqn46p7tt5lswpwfhsaqxzmp3sjvj22q`, '_blank');
+            }}>erd1v7dxzrmwlhg6etxautdnm6lm4tkqn46p7tt5lswpwfhsaqxzmp3sjvj22q</a>
           </div>
         </CardContent>
       </Card>

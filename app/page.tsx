@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button';
 import LandingPage from '@/components/new/Landing';
 import PageHeader from '@/components/new/Landing';
 import CTA from '@/components/new/Landing/CTA';
+import SecondSection from '@/components/new/Landing/SecondSection';
 
 const Home: NextPage = () => {
   return (
@@ -25,9 +26,10 @@ const Home: NextPage = () => {
         <CTA  />
         </div>
       </Card>
+      <SecondSection />
       <NFTGallery />
 
-      <div>
+      <div className='mb-10'>
           <p>Unlock the power of your brain data.</p>
         <Button asChild variant="outline">
           <a href="/nft">Get Started</a>
@@ -57,44 +59,8 @@ const Home: NextPage = () => {
         <GetLoginInfoDemo />
         <GetLoggingInStateDemo />
       </div>
-      <Card className="mb-4">
-        <CardContent className="mt-6">
-          <span>You will also get a couple of other tools, like:</span>
-          <ul>
-            <li>- Authenticated component - wrapper to check the auth state</li>
-            <li>- LoginComponent - component with 3 auth options</li>
-            <li>
-              - LoginModalButton component - ready to use modal with
-              LoginComponent
-            </li>
-            <li>
-              - You will get all tools from{' '}
-              <a href="https://www.useElven.com" target="_blank">
-                useElven
-              </a>
-            </li>
-            <li>- Preserved app state after hard refresh of the page</li>
-            <li>
-              - And of course Shadcn UI, Tailwind CSS and NextJS framework
-            </li>
-          </ul>
-        </CardContent>
-      </Card>
-      <Card>
-        <CardContent className="mt-6">
-          <div>Better docs, and more improvements soon!</div>
-          <div>
-            Check the{' '}
-            <a
-              target="_blank"
-              href="https://github.com/xdevguild"
-              className="underline"
-            >
-              xDevGuild
-            </a>
-          </div>
-        </CardContent>
-      </Card>
+      
+      
     </>
   );
 };

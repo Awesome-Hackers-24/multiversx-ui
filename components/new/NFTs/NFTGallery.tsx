@@ -5,7 +5,7 @@ import NFTCard from './NFTCard'; // Assuming the NFTCard component is exported f
 const nftItems = [
   {
     id: 'nft-001',
-    name: 'Ethereal Moonlight',
+    name: 'Relaxed Week',
     imageUrl: '/path/to/nft-image1.jpg',
     description: 'A unique digital artwork capturing the serene beauty of moonlight.',
     earnedDate: '2023-04-12',

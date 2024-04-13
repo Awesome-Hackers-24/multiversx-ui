@@ -5,7 +5,7 @@ const CTA = () => {
   return (
     <Button className='mt-10' variant="secondary">
 
-    Login with MultiversX
+    Sign up with MultiversX
     </Button>
   )
 }
