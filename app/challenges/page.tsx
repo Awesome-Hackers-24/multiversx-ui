@@ -1,10 +1,15 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Card, CardContent, CardTitle } from '@/components/ui/card'; // Assuming these components are correctly imported
 import { ChallengeModal } from '@/components/new/Modals/ChallengeModal'; // Make sure the path to ChallengeModal is correct
+import { TransactionCallbackParams } from '@useelven/core';
 
 const ChallengesPage = () => {
+  const [result, setResult] = useState<{ type: string; content: string }>();
+  const [pending, setPending] = useState(false);
+  const [error, setError] = useState<string>();
+
   // List of challenges
   const challenges = [
     { name: 'Focus', description: 'Improve your concentration.', link: '/',  level: 3},
@@ -21,6 +26,27 @@ const ChallengesPage = () => {
     setActiveChallenge(challenge);
     window.open(challenge.link, '_blank'); // Open the challenge link in a new tab
   };
+
+  const handleTxCb = useCallback(
+    ({ transaction, pending, error }: TransactionCallbackParams) => {
+      if (transaction) {
+        setResult({ type: 'tx', content: transaction.getHash().hex() });
+        setPending(false);
+        setError(undefined);
+      }
+      if (pending) {
+        setPending(true);
+        setError(undefined);
+        setResult(undefined);
+      }
+      if (error) {
+        setError(error);
+        setPending(false);
+        setResult(undefined);
+      }
+    },
+    []
+  );
 
   return (
     <div className="flex justify-center items-start pt-12 min-h-screen">
@@ -46,6 +72,7 @@ const ChallengesPage = () => {
           onOpen={() => console.log(`${activeChallenge.name} challenge started.`)}
           onClose={() => setActiveChallenge(null)}
           challenge={activeChallenge} // Passing challenge data to modal
+          cb={handleTxCb} // Passing transaction callback to modal
         />
       )}
     </div>

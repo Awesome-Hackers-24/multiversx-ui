@@ -1,40 +1,44 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
 import NFTCard from './NFTCard'; // Assuming the NFTCard component is exported from this path
+import NFT from '../../../public/nft.png'; 
+import { Button } from '@/components/ui/button';
 
 // Dummy array of NFT data for demonstration
 const nftItems = [
   {
     id: 'nft-001',
     name: 'Relaxed Week',
-    imageUrl: '/path/to/nft-image1.jpg',
+    imageUrl: NFT ,
     description: 'A unique digital artwork capturing the serene beauty of moonlight.',
     earnedDate: '2023-04-12',
   },
   {
     id: 'nft-002',
-    name: 'Celestial Overdrive',
-    imageUrl: '/path/to/nft-image2.jpg',
-    description: 'An explosive, vibrant expression of celestial phenomena.',
+    name: 'Relaxation Master #3',
+    imageUrl: NFT ,
+    description: 'Special NFT given for perfoming 3 relaxing challanges in a row.',
     earnedDate: '2023-05-15',
   },
   {
     id: 'nft-003',
-    name: 'Abyssal Echo',
-    imageUrl: '/path/to/nft-image3.jpg',
-    description: 'Deep oceanic scenes portrayed in dark, moody blues.',
+    name: 'Focus Master #9',
+    imageUrl: NFT ,
+    description: 'Brainscan NFT for completing the Focus Master challenge.',
     earnedDate: '2023-06-20',
   },
   {
     id: 'nft-001',
-    name: 'Ethereal Moonlight',
-    imageUrl: '/path/to/nft-image1.jpg',
-    description: 'A unique digital artwork capturing the serene beauty of moonlight.',
+    name: 'Brainstorner #21',
+    imageUrl: NFT ,
+    description: 'Brainscan NFT for completing the Brainstorming challenge.',
     earnedDate: '2023-04-12',
   },
   {
     id: 'nft-001',
     name: 'Ethereal Moonlight',
-    imageUrl: '/path/to/nft-image1.jpg',
+    imageUrl: NFT ,
     description: 'A unique digital artwork capturing the serene beauty of moonlight.',
     earnedDate: '2023-04-12',
   },
@@ -42,17 +46,36 @@ const nftItems = [
 ];
 
 // NFTGallery component implementation
-const NFTGallery = () => {
-  return (
-    <div className="container mx-auto px-4 py-8">
-        <p className='text-3xl mb-5'>Your NFTs</p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {nftItems.map((nft) => (
-          <NFTCard id={nft.id} key={nft.id} nft={nft} />
-        ))}
+const NFTGallery = ({ title, subtitle }: { title: string; subtitle: string; }) => {
+    // State to control the visibility of NFT items
+    const [showAll, setShowAll] = useState(false);
+  
+    // Determine the number of NFTs to display
+    const displayedItems = showAll ? nftItems : nftItems.slice(0, 4);
+  
+    return (
+      <div className="container mx-auto px-4 py-8">
+        <p className='text-3xl'>{title}</p>
+        <p className='text-sm text-gray-300 mt-2 mb-5'>{subtitle}</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {displayedItems.map((nft) => (
+            <NFTCard id={nft.id} key={nft.id} nft={nft} />
+          ))}
+        </div>
+        {nftItems.length > 4 && !showAll && (
+          <div className="text-center mt-6">
+            <Button 
+              onClick={() => setShowAll(true)} 
+              className="text-lg mt-4"
+              variant='outline'>
+              See More
+            </Button>
+          </div>
+        )}
       </div>
-    </div>
-  );
-};
+    );
+  };
+  
+  
 
 export default NFTGallery;

@@ -1,3 +1,4 @@
+"use client";
 import type { NextPage } from 'next';
 import { SimpleDemo } from '@/components/demo/simple-demo';
 import { GetUserDataDemo } from '@/components/demo/get-user-data-demo';
@@ -18,8 +19,8 @@ const Home: NextPage = () => {
       <Card className="mb-4">
         <div className="px-4 sm:px- py-20 items-center flex flex-col">
         <PageHeader  
-          description='Unlock productivity and creativity with guided brain state modulation.'
-          title="Your brain, to the power of X."
+          description='Cognify is a decentralized platform aiming to increase productivity and creativity using guided brain state modulation.'
+          title="Your brain data, to the power of X."
           >
           Now in BETA
         </PageHeader>
@@ -27,7 +28,8 @@ const Home: NextPage = () => {
         </div>
       </Card>
       <SecondSection />
-      <NFTGallery />
+      <NFTGallery title="Your NFTs"/>
+      <NFTGallery title="Explore" subtitle="Brainscans taken by the community"/>
 
       <div className='mb-10'>
           <p>Unlock the power of your brain data.</p>

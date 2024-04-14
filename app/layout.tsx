@@ -51,11 +51,11 @@ export default function RootLayout({
          <BgShapes />
           <div className="container mx-auto">
             <div className="w-full flex items-center justify-between flex-wrap gap-2 py-9 flex-col lg:flex-row">
-            <div className='flex items-center gap-12'>
+            <div className='flex items-end   gap-12'>
 
               <Link href="/">
                 <div className="flex items-center gap-2 relative select-none">
-                  <span className="cursor-pointer mb-0 text-4xl font-black text-center">
+                  <span className="cursor-pointer mb-0 text-4xl font-bold text-center">
                     Cognify
                   </span>
                 </div>
@@ -64,7 +64,7 @@ export default function RootLayout({
             <ul className="flex gap-6">
               <li><Link href="/"><div className="text-lg text-gray-200 hover:text-gray-300">Dashboard</div></Link></li>
               <li><Link href="/challenges"><div className="text-lg text-gray-200 hover:text-gray-300">Challenges</div></Link></li>
-              <li><Link href="/leaderboard"><div className="text-lg text-gray-200 hover:text-gray-300">Leaderboard</div></Link></li>
+              {/* <li><Link href="/leaderboard"><div className="text-lg text-gray-200 hover:text-gray-300">Leaderboard</div></Link></li> */}
             </ul>
           </nav>
             </div>
